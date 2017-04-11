@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5r-wh-kde">
+                                <rect key="frame" x="272" y="120" width="57" height="30"/>
+                                <state key="normal" title="Button 1"/>
+                                <connections>
+                                    <segue destination="ilC-Mt-TZh" kind="popoverPresentation" identifier="popover" popoverAnchorView="x5r-wh-kde" id="IK4-hJ-Nhs">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWR-dG-2r9">
+                                <rect key="frame" x="364" y="120" width="55" height="30"/>
+                                <state key="normal" title="Button2"/>
+                                <connections>
+                                    <segue destination="ihe-kl-jFc" kind="presentation" identifier="modal" id="L0S-ag-Tuq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDW-0S-POd">
+                                <rect key="frame" x="357" y="224" width="69" height="30"/>
+                                <state key="normal" title="PopModal"/>
+                                <connections>
+                                    <action selector="modalPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPV-3g-JRD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkq-MQ-zVq">
+                                <rect key="frame" x="272" y="224" width="57" height="30"/>
+                                <state key="normal" title="Popover"/>
+                                <connections>
+                                    <action selector="popoverPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fBh-CF-l19"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x5r-wh-kde" firstAttribute="baseline" secondItem="DWR-dG-2r9" secondAttribute="baseline" id="1fz-Lp-Cfv"/>
+                            <constraint firstItem="lDW-0S-POd" firstAttribute="leading" secondItem="Kkq-MQ-zVq" secondAttribute="trailing" constant="28" id="8x1-hW-68A"/>
+                            <constraint firstItem="Kkq-MQ-zVq" firstAttribute="top" secondItem="x5r-wh-kde" secondAttribute="bottom" constant="74" id="HBK-Jz-PFR"/>
+                            <constraint firstItem="x5r-wh-kde" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Knk-jf-TIv"/>
+                            <constraint firstItem="Kkq-MQ-zVq" firstAttribute="baseline" secondItem="lDW-0S-POd" secondAttribute="baseline" id="NPJ-xy-4vP"/>
+                            <constraint firstItem="x5r-wh-kde" firstAttribute="leading" secondItem="Kkq-MQ-zVq" secondAttribute="leading" id="Tom-lO-bQA"/>
+                            <constraint firstItem="x5r-wh-kde" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W0J-FZ-ozV"/>
+                            <constraint firstItem="DWR-dG-2r9" firstAttribute="centerX" secondItem="lDW-0S-POd" secondAttribute="centerX" id="l8j-Qt-CTI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--PopoverVC-->
+        <scene sceneID="lhe-XE-jIL">
+            <objects>
+                <viewController storyboardIdentifier="popoverID" id="ilC-Mt-TZh" customClass="PopoverVC" customModule="pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yv3-nl-5DN"/>
+                        <viewControllerLayoutGuide type="bottom" id="2N8-CA-UKM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXQ-HO-eFy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fo-EG-k5k">
+                                <rect key="frame" x="268" y="254" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKX-RW-mSm">
+                                <rect key="frame" x="282" y="542" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="popoverDonePressed:" destination="ilC-Mt-TZh" eventType="touchUpInside" id="44X-Ec-QsZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2N8-CA-UKM" firstAttribute="top" secondItem="AKX-RW-mSm" secondAttribute="bottom" constant="28" id="4B6-rG-HXC"/>
+                            <constraint firstItem="0fo-EG-k5k" firstAttribute="top" secondItem="yv3-nl-5DN" secondAttribute="bottom" constant="234" id="8ID-1E-IEb"/>
+                            <constraint firstItem="0fo-EG-k5k" firstAttribute="centerX" secondItem="wXQ-HO-eFy" secondAttribute="centerX" id="PIZ-ZD-Act"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AKX-RW-mSm" secondAttribute="trailing" constant="261" id="qK1-ph-1Xb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IxH-qA-AF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="-81"/>
+        </scene>
+        <!--ModalVC-->
+        <scene sceneID="m1e-Yk-19U">
+            <objects>
+                <viewController id="ihe-kl-jFc" customClass="ModalVC" customModule="pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f62-U9-lTc"/>
+                        <viewControllerLayoutGuide type="bottom" id="vUj-XN-61q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ojS-a8-RW1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdh-Yq-Ok1">
+                                <rect key="frame" x="276" y="194" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mF4-22-NeI">
+                                <rect key="frame" x="283" y="506" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="modalDonePressed:" destination="ihe-kl-jFc" eventType="touchUpInside" id="USt-nI-5eY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zdh-Yq-Ok1" firstAttribute="top" secondItem="f62-U9-lTc" secondAttribute="bottom" constant="174" id="WO4-lg-I91"/>
+                            <constraint firstItem="vUj-XN-61q" firstAttribute="top" secondItem="mF4-22-NeI" secondAttribute="bottom" constant="64" id="agH-Dj-IPF"/>
+                            <constraint firstItem="Zdh-Yq-Ok1" firstAttribute="centerX" secondItem="ojS-a8-RW1" secondAttribute="centerX" id="n4U-zR-KqQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mF4-22-NeI" secondAttribute="trailing" constant="260" id="tEd-RN-yK7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3L-HS-ODh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="580"/>
+        </scene>
+    </scenes>
+</document>
